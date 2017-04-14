@@ -10,14 +10,14 @@ import java.util.List;
  */
 @Data
 @Entity
-@Table(name = "supplier")
+@Table(name = "suppliers")
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "supplier_id")
     private long id;
 
-    @Column(name = "compnayName")
+    @Column(name = "companyName")
     private String company;
 
     @Column(name = "contactName")

@@ -10,15 +10,15 @@ import java.util.Map;
  */
 @Data
 @Entity
-@Table(name = "shipper")
+@Table(name = "shippers")
 public class Shipper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "shpper_id")
     private long id;
 
-    @Column(name = "compnayName")
-    private String compnay;
+    @Column(name = "companyName")
+    private String company;
 
     @ElementCollection
     @CollectionTable(name = "shiper_contact", joinColumns = @JoinColumn(name = "shiper_id"))

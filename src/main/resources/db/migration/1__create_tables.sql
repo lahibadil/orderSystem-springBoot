@@ -1,6 +1,6 @@
 CREATE TABLE `shippers` (
   `shpper_id` bigint NOT NULL AUTO_INCREMENT,
-  `compnayName` varchar(255) DEFAULT NULL,
+  `companyName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`shpper_id`)
 );
 
@@ -19,7 +19,7 @@ CREATE TABLE `suppliers` (
   `line1` varchar(255) DEFAULT NULL,
   `line2` varchar(255) DEFAULT NULL,
   `zip` varchar(255) DEFAULT NULL,
-  `compnayName` varchar(255) DEFAULT NULL,
+  `companyName` varchar(255) DEFAULT NULL,
   `contactName` varchar(255) DEFAULT NULL,
   `contactJobTitle` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
