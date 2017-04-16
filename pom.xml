@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>orders</name>
+	<name>orders-SpringBoot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

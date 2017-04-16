@@ -128,3 +128,11 @@ target/test-classes/com/lahib/OrdersApplicationTests.class
 .idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_5_2_RELEASE.xml
 .idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_2_RELEASE.xml
 .idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_5_2_RELEASE.xml
+target/classes/com/lahib/db/controllers/CustomerController.class
+target/classes/com/lahib/db/controllers/EmployeeController.class
+target/classes/com/lahib/db/controllers/InvoiceController.class
+target/classes/com/lahib/db/controllers/OrderController.class
+target/classes/com/lahib/db/controllers/PaymentController.class
+target/classes/com/lahib/db/controllers/ProductController.class
+target/classes/com/lahib/db/controllers/SupplierController.class
+target/classes/db/migration/V1__create_tables.sql
