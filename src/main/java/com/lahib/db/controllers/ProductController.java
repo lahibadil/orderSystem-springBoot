@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Product;
-import com.lahib.db.services.ProductService;
+import com.lahib.db.services.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ProductController extends BaseController {
 
     @Autowired
-    private ProductService service;
+    private ProductServiceImpl service;
 
     @RequestMapping(
             value = "/products",

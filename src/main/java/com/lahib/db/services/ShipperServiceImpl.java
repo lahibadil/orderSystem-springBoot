@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Service
 @Configurable
-public class ShipperService {
+public class ShipperServiceImpl implements ShipperService{
     @Autowired
     private ShipperRepository shipperRepository;
 

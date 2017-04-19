@@ -136,3 +136,5 @@ target/classes/com/lahib/db/controllers/PaymentController.class
 target/classes/com/lahib/db/controllers/ProductController.class
 target/classes/com/lahib/db/controllers/SupplierController.class
 target/classes/db/migration/V1__create_tables.sql
+target/**
+.idea/**

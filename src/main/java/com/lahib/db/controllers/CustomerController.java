@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Customer;
-import com.lahib.db.services.CustomerService;
+import com.lahib.db.services.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class CustomerController extends BaseController {
 
     @Autowired
-    private CustomerService service;
+    private CustomerServiceImpl service;
 
     @RequestMapping(
             value = "/customers",

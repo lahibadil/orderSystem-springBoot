@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Supplier;
-import com.lahib.db.services.SupplierService;
+import com.lahib.db.services.SupplierServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class SupplierController extends BaseController {
 
     @Autowired
-    private SupplierService service;
+    private SupplierServiceImpl service;
 
     @RequestMapping(
             value = "/suppliers",

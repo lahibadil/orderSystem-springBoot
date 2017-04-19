@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Adil on 4/12/2017.
  */
 @Service
-public class PaymentService {
+public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 

@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Employee;
-import com.lahib.db.services.EmployeeService;
+import com.lahib.db.services.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class EmployeeController extends BaseController {
 
     @Autowired
-    private EmployeeService service;
+    private EmployeeServiceImpl service;
 
     @RequestMapping(
             value = "/employees",

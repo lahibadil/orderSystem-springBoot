@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Payment;
-import com.lahib.db.services.PaymentService;
+import com.lahib.db.services.PaymentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class PaymentController extends BaseController {
 
     @Autowired
-    private PaymentService service;
+    private PaymentServiceImpl service;
 
     @RequestMapping(
             value = "/payments",

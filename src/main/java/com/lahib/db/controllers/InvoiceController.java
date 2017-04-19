@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Invoice;
-import com.lahib.db.services.InvoiceService;
+import com.lahib.db.services.InvoiceServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class InvoiceController extends BaseController {
 
     @Autowired
-    private InvoiceService service;
+    private InvoiceServiceImpl service;
 
     @RequestMapping(
             value = "/invoices",

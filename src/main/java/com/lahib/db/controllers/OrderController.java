@@ -1,7 +1,7 @@
 package com.lahib.db.controllers;
 
 import com.lahib.db.entities.Order;
-import com.lahib.db.services.OrderService;
+import com.lahib.db.services.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.util.List;
 public class OrderController extends BaseController {
 
     @Autowired
-    private OrderService service;
+    private OrderServiceImpl service;
 
     @RequestMapping(
             value = "/orders",
