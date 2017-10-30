@@ -29,7 +29,7 @@ public class AccountAuthenticationProvider extends AbstractUserDetailsAuthentica
     private AccountUserDetailsService userDetailsService;
 
     /**
-     * A PasswordEncoder instance to hash clear test password values.
+     * A PasswordEncoder instance to hash clear text password values.
      */
     @Autowired
     private PasswordEncoder passwordEncoder;

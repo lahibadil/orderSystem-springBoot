@@ -26,6 +26,7 @@ public class CustomerController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<List<Customer>> getAll() {
+
         return new ResponseEntity<List<Customer>>(service.findAll(), HttpStatus.OK);
     }
 
