@@ -1,8 +1,9 @@
 package com.lahib.db.entities;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -38,4 +39,9 @@ public class Customer {
 
     @Embedded
     private Address address;
+
+
+    public Customer(){
+        contacts = new HashMap<>();
+    }
 }

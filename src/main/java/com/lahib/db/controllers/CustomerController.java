@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping("/api/")
 public class CustomerController extends BaseController {
 
-    @Autowired
+
     private CustomerServiceImpl service;
+
+    @Autowired
+    public CustomerController(CustomerServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/customers",
@@ -26,8 +31,7 @@ public class CustomerController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<List<Customer>> getAll() {
-
-        return new ResponseEntity<List<Customer>>(service.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
     @RequestMapping(
@@ -40,8 +44,7 @@ public class CustomerController extends BaseController {
         if (customer == null) {
             return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Customer>(customer, HttpStatus.OK);
-
+        return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
     @RequestMapping(
@@ -53,9 +56,9 @@ public class CustomerController extends BaseController {
     public ResponseEntity<Customer> save(@RequestBody Customer customer) {
         Customer savedCustomer = service.save(customer);
         if (customer == null) {
-            return new ResponseEntity<Customer>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<Customer>(savedCustomer, HttpStatus.CREATED);
+        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
     }
 
 
@@ -68,9 +71,9 @@ public class CustomerController extends BaseController {
     public ResponseEntity<Customer> update(@RequestBody Customer customer) {
         Customer updatedCustomer = service.update(customer);
         if (updatedCustomer == null) {
-            return new ResponseEntity<Customer>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<Customer>(updatedCustomer, HttpStatus.OK);
+        return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
     }
 
     @RequestMapping(
@@ -81,10 +84,10 @@ public class CustomerController extends BaseController {
     public ResponseEntity<Customer>  delete(@PathVariable("id") long id) {
         try {
             service.delete(id);
-            return new ResponseEntity<Customer>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<Customer>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

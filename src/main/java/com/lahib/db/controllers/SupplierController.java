@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping("/api/")
 public class SupplierController extends BaseController {
 
-    @Autowired
+
     private SupplierServiceImpl service;
+
+    @Autowired
+    public SupplierController(SupplierServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/suppliers",

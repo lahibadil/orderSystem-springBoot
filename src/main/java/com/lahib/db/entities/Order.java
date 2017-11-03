@@ -4,6 +4,7 @@ import com.lahib.db.entities.enums.OrderStatus;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -46,7 +47,6 @@ public class Order {
                     @AttributeOverride(name = "city", column = @Column(name = "shipToCity")),
                     @AttributeOverride(name = "zip", column = @Column(name = "shipToZip")),
                     @AttributeOverride(name = "country", column = @Column(name = "shipToCountry")),
-
             }
     )
     private Address shipToAddress;
@@ -71,5 +71,11 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
     private List<Invoice> invoices;
+
+
+    public Order(){
+        invoices = new ArrayList<>();
+        orderLines = new ArrayList<>();
+    }
 
 }

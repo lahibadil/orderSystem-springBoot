@@ -3,6 +3,7 @@ CREATE TABLE `account` (
   `referenceId` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
   `credentialsexpired` tinyint(1) NOT NULL DEFAULT '0',
   `expired` tinyint(1) NOT NULL DEFAULT '0',
@@ -29,11 +30,11 @@ CREATE TABLE `role` (
   UNIQUE KEY `UQ_Role_Code` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `accountrole` (
-  `accountId` bigint(20) NOT NULL,
-  `roleId` bigint(20) NOT NULL,
-  PRIMARY KEY (`accountId`,`roleId`),
-  KEY `FK_AccountRole_RoleId` (`roleId`),
-  CONSTRAINT `FK_AccountRole_AccountId` FOREIGN KEY (`accountId`) REFERENCES `account` (`id`),
-  CONSTRAINT `FK_AccountRole_RoleId` FOREIGN KEY (`roleId`) REFERENCES `role` (`id`)
+CREATE TABLE `account_role` (
+  `account_id` bigint(20) NOT NULL,
+  `role_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`account_id`,`role_id`),
+  KEY `FK_AccountRole_RoleId` (`role_id`),
+  CONSTRAINT `FK_AccountRole_AccountId` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
+  CONSTRAINT `FK_AccountRole_RoleId` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

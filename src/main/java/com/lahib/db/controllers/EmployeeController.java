@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping("/api/")
 public class EmployeeController extends BaseController {
 
-    @Autowired
+
     private EmployeeServiceImpl service;
+
+    @Autowired
+    public EmployeeController(EmployeeServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/employees",

@@ -3,6 +3,7 @@ package com.lahib.db.security;
 import com.lahib.db.entities.Account;
 import com.lahib.db.entities.Role;
 import com.lahib.db.services.AccountService;
+import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.Collection;
  * Created by Adil on 4/19/2017.
  */
 @Service
+@Data
 public class AccountUserDetailsService implements UserDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -31,12 +33,14 @@ public class AccountUserDetailsService implements UserDetailsService {
     @Autowired
     private AccountService accountService;
 
+    private Account account;
+
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
         logger.debug("> loadUserByUsername {}", username);
 
-        Account account = accountService.findByUsername(username);
+        account = accountService.findByUsername(username);
         if (account == null) {
             // Not found...
             throw new UsernameNotFoundException(

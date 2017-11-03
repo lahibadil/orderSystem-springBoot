@@ -1,6 +1,6 @@
 package com.lahib.db.entities;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

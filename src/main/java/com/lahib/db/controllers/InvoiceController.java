@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping("/api/")
 public class InvoiceController extends BaseController {
 
-    @Autowired
+
     private InvoiceServiceImpl service;
+
+    @Autowired
+    public InvoiceController(InvoiceServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/invoices",

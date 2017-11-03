@@ -14,14 +14,14 @@ import java.util.Map;
 public class Shipper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "shpper_id")
+    @Column(name = "shipper_id")
     private long id;
 
     @Column(name = "companyName")
     private String company;
 
     @ElementCollection
-    @CollectionTable(name = "shiper_contact", joinColumns = @JoinColumn(name = "shiper_id"))
+    @CollectionTable(name = "shipper_contact", joinColumns = @JoinColumn(name = "shipper_id"))
     @MapKeyColumn(name = "contactJobTitle")
     @Column(name = "contactName")
     private Map<String, String> contacts;

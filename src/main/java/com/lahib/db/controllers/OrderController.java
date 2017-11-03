@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping("/api/")
 public class OrderController extends BaseController {
 
-    @Autowired
+
     private OrderServiceImpl service;
+
+    @Autowired
+    public OrderController(OrderServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/orders",

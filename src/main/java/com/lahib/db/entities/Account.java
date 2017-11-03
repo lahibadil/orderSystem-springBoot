@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Set;
  */
 @Data
 @Entity
-@Table(name = "accounts")
+@Table(name = "account")
 public class Account {
 
     @Id
@@ -23,6 +24,9 @@ public class Account {
 
     @NotNull
     private String password;
+
+    @NotNull
+    private String email;
 
     @NotNull
     private boolean enabled = true;
@@ -40,13 +44,13 @@ public class Account {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     @JoinTable(
-            name = "AccountRole",
+            name = "account_role",
             joinColumns = @JoinColumn(
-                    name = "accountId",
+                    name = "account_id",
                     referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
-                    name = "roleId",
+                    name = "role_id",
                     referencedColumnName = "id"))
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
 }

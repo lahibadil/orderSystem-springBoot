@@ -17,16 +17,22 @@ import java.util.List;
 @RequestMapping("/api/")
 public class ShipperController extends BaseController {
 
-    @Autowired
+
     private ShipperServiceImpl service;
+
+    @Autowired
+    public ShipperController(ShipperServiceImpl service) {
+        this.service = service;
+    }
 
     @RequestMapping(
             value = "/shippers",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<Shipper>> getAll() {
-        return new ResponseEntity<List<Shipper>>(service.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Shipper>> getAll() throws Exception {
+       // return new ResponseEntity<List<Shipper>>(service.findAll(), HttpStatus.OK);
+        throw new Exception("An Error has occured");
     }
 
     @RequestMapping(
