@@ -10,6 +10,17 @@ machine:
     MYSQL_PORT: 3306
     MYSQL_USER: root
     MYSQL_PASSWORD: password
+    MYSQL_DATABASE: orders
+dependencies:
+  pre:
+    - npm install -g https://github.com/honeyfund/node-mysql-script-deploy
+    ...
+database:
+  override:
+    # replace CircleCI's generated database.yml
+    - echo "SET PASSWORD for 'root'@'localhost' = PASSWORD('root');" | mysql -u root
+    - mysql -u root -proot -e "CREATE DATABASE orders"
+
 jobs:
   build:
     docker:
