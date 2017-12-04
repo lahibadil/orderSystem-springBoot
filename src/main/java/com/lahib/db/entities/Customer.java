@@ -19,7 +19,6 @@ public class Customer {
     @Column(name = "customer_id")
     private long id;
 
-
     private String company;
 
     @ElementCollection

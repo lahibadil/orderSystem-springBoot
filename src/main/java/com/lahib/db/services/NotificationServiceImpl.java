@@ -21,7 +21,6 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public void sendEmail(Account account, String msg) throws MailException{
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-
         mailMessage.setTo(account.getEmail());
         mailMessage.setFrom("adil.ildivo@gmail.com");
         mailMessage.setSubject("Notification");

@@ -1,7 +1,6 @@
 package com.lahib.db.security;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,12 +14,8 @@ import org.springframework.stereotype.Component;
  * Created by Adil on 4/19/2017.
  */
 @Component
+@Slf4j
 public class AccountAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
-    /**
-     * The Logger for this class.
-     */
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     /**
      * A Spring Security UserDetailsService implementation based upon the
      * Account entity model.
@@ -38,7 +33,7 @@ public class AccountAuthenticationProvider extends AbstractUserDetailsAuthentica
     protected void additionalAuthenticationChecks(UserDetails userDetails,
                                                   UsernamePasswordAuthenticationToken token)
             throws AuthenticationException {
-        logger.debug("> additionalAuthenticationChecks");
+        log.debug("> additionalAuthenticationChecks");
 
         if (token.getCredentials() == null
                 || userDetails.getPassword() == null) {
@@ -50,19 +45,19 @@ public class AccountAuthenticationProvider extends AbstractUserDetailsAuthentica
             throw new BadCredentialsException("Invalid credentials.");
         }
 
-        logger.debug("< additionalAuthenticationChecks");
+        log.debug("< additionalAuthenticationChecks");
     }
 
     @Override
     protected UserDetails retrieveUser(String username,
                                        UsernamePasswordAuthenticationToken token)
             throws AuthenticationException {
-        logger.debug("> retrieveUser");
+        log.debug("> retrieveUser");
 
         UserDetails userDetails = userDetailsService
                 .loadUserByUsername(username);
 
-        logger.debug("< retrieveUser");
+        log.debug("< retrieveUser");
         return userDetails;
     }
 }

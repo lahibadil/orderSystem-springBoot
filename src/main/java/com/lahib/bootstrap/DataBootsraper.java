@@ -1,5 +1,6 @@
 package com.lahib.bootstrap;
 
+import com.lahib.db.aspects.TrackTime;
 import com.lahib.db.entities.Customer;
 import com.lahib.db.services.CustomerService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ public class DataBootsraper implements ApplicationListener<ContextRefreshedEvent
         this.customerService = customerService;
     }
 
+    @TrackTime
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 

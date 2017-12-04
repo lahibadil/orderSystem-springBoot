@@ -30,6 +30,7 @@ public class CustomerController extends BaseController {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
+    //@PreAuthorize("hasAnyRole('USER')")
     public ResponseEntity<List<Customer>> getAll() {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }

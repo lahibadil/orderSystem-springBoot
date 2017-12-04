@@ -26,7 +26,6 @@ import java.util.Collection;
 public class AccountUserDetailsService implements UserDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     /**
      * The AccountService business service.
      */
