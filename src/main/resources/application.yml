@@ -18,8 +18,8 @@ spring:
     cache: false
   mail:
     host: smtp.gmail.com
-    username: emsemsweb@gmail.com
-    password: ems-web2016
+    username: #########
+    password: #########
     port: 587
     properties:
       mail:
