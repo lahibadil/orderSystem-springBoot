@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -17,8 +18,8 @@ public class ShipperServiceImpl implements ShipperService{
     @Autowired
     private ShipperRepository shipperRepository;
 
-    public Shipper findById(long id) {
-        return shipperRepository.findOne(id);
+    public Optional<Shipper> findById(long id) {
+        return shipperRepository.findById(id);
     }
 
     public List<Shipper> findAll() {
@@ -37,7 +38,5 @@ public class ShipperServiceImpl implements ShipperService{
         shipperRepository.delete(shipper);
     }
 
-    public void delete(long id) {
-        shipperRepository.delete(id);
-    }
+    public void delete(long id) {shipperRepository.deleteById(id); }
 }

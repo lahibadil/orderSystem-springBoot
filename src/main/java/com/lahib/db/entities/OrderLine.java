@@ -2,6 +2,7 @@ package com.lahib.db.entities;
 
 import com.lahib.db.entities.ids.OrderLineID;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "orderLines")
 public class OrderLine {

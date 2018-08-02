@@ -1,6 +1,7 @@
 package com.lahib.db.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Map;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "shippers")
 public class Shipper {
@@ -21,7 +23,7 @@ public class Shipper {
     private String company;
 
     @ElementCollection
-    @CollectionTable(name = "shipper_contact", joinColumns = @JoinColumn(name = "shipper_id"))
+    @CollectionTable(name = "shipper_contacts", joinColumns = @JoinColumn(name = "shipper_id"))
     @MapKeyColumn(name = "contactJobTitle")
     @Column(name = "contactName")
     private Map<String, String> contacts;

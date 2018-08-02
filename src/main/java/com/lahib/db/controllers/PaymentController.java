@@ -40,7 +40,7 @@ public class PaymentController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Payment> get(@PathVariable("id") long id) {
-        Payment payment = service.findById(id);
+        Payment payment = service.findById(id).get();
         if (payment == null) {
             return new ResponseEntity<Payment>(HttpStatus.NOT_FOUND);
         }

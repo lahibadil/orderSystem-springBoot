@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -15,8 +16,8 @@ public class SupplierServiceImpl implements SupplierService{
     @Autowired
     private SupplierRepository supplierRepository;
 
-    public Supplier findById(long id) {
-        return supplierRepository.findOne(id);
+    public Optional<Supplier> findById(long id) {
+        return supplierRepository.findById(id);
     }
 
     public List<Supplier> findAll() {
@@ -36,6 +37,6 @@ public class SupplierServiceImpl implements SupplierService{
     }
 
     public void delete(long id) {
-        supplierRepository.delete(id);
+        supplierRepository.deleteById(id);
     }
 }

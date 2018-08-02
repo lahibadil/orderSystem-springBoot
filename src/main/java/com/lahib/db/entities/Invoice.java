@@ -2,8 +2,10 @@ package com.lahib.db.entities;
 
 import com.lahib.db.entities.enums.InvoiceStatus;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "invoices")
 public class Invoice {
@@ -31,6 +34,7 @@ public class Invoice {
     private InvoiceStatus orderStatus;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "invoice")
-    private List<InvoiceLine> invoiceLines;
+    private List<InvoiceLine> invoiceLines = new ArrayList<InvoiceLine>();
+
 
 }

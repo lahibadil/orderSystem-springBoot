@@ -41,7 +41,7 @@ public class ShipperController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Shipper> get(@PathVariable("id") long id) {
-        Shipper shipper = service.findById(id);
+        Shipper shipper = service.findById(id).get();
         if (shipper == null) {
             return new ResponseEntity<Shipper>(HttpStatus.NOT_FOUND);
         }

@@ -40,7 +40,7 @@ public class InvoiceController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Invoice> get(@PathVariable("id") long id) {
-        Invoice invoice = service.findById(id);
+        Invoice invoice = service.findById(id).get();
         if (invoice == null) {
             return new ResponseEntity<Invoice>(HttpStatus.NOT_FOUND);
         }

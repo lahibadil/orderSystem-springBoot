@@ -1,6 +1,7 @@
 package com.lahib.db.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.util.List;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "products")
 public class Product {
@@ -40,7 +42,7 @@ public class Product {
     private int reorderLevel;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "productSupplier", joinColumns = @JoinColumn(name = "product_id")
+    @JoinTable(name = "product_suppliers", joinColumns = @JoinColumn(name = "product_id")
             , inverseJoinColumns = @JoinColumn(name = "supplier_id"))
     private List<Supplier> suppliers;
 }

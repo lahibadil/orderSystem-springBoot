@@ -40,7 +40,7 @@ public class ProductController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Product> get(@PathVariable("id") long id) {
-        Product product = service.findById(id);
+        Product product = service.findById(id).get();
         if (product == null) {
             return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
         }

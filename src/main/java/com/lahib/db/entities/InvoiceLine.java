@@ -2,6 +2,7 @@ package com.lahib.db.entities;
 
 import com.lahib.db.entities.ids.InvoiceLineID;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
  */
 
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "invoiceLines")
 public class InvoiceLine {

@@ -2,6 +2,7 @@ package com.lahib.db.entities;
 
 import com.lahib.db.entities.enums.OrderStatus;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -74,8 +76,8 @@ public class Order {
 
 
     public Order(){
-        invoices = new ArrayList<>();
-        orderLines = new ArrayList<>();
+        invoices = new ArrayList<Invoice>();
+        orderLines = new ArrayList<OrderLine>();
     }
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -16,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Employee findById(long id) {
-        return employeeRepository.findOne(id);
+    public Optional<Employee> findById(long id) {
+        return employeeRepository.findById(id);
     }
 
     public List<Employee> findAll() {
@@ -37,6 +38,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public void delete(long id) {
-        employeeRepository.delete(id);
+        employeeRepository.deleteById(id);
     }
 }

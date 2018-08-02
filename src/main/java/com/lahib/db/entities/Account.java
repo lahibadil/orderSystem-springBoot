@@ -1,6 +1,7 @@
 package com.lahib.db.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import java.util.Set;
  * Created by Adil on 4/19/2017.
  */
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "account")
 public class Account {

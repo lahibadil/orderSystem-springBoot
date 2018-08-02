@@ -1,6 +1,7 @@
 package com.lahib.db.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -9,6 +10,7 @@ import javax.persistence.Embeddable;
  * Created by Adil on 4/12/2017.
  */
 @Data
+@Accessors(chain = true)
 @Embeddable
 public class Address {
 

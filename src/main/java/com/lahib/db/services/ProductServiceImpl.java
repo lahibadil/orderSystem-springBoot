@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -15,8 +16,8 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepository productRepository;
 
-    public Product findById(long id) {
-        return productRepository.findOne(id);
+    public Optional<Product> findById(long id) {
+        return productRepository.findById(id);
     }
 
     public List<Product> findAll() {
@@ -36,6 +37,6 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public void delete(long id) {
-        productRepository.delete(id);
+        productRepository.deleteById(id);
     }
 }

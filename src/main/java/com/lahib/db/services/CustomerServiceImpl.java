@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -16,8 +17,8 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public Customer findById(long id) {
-        return customerRepository.findOne(id);
+    public Optional<Customer> findById(long id) {
+        return customerRepository.findById(id);
     }
 
     @Override
@@ -41,6 +42,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void delete(long id) {
-        customerRepository.delete(id);
+        customerRepository.deleteById(id);
     }
 }

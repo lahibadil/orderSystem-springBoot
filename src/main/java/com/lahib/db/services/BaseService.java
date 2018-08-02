@@ -1,12 +1,13 @@
 package com.lahib.db.services;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/19/2017.
  */
 public interface BaseService<T> {
-    T findById(long id);
+    Optional<T> findById(long id);
 
     List<T> findAll();
 

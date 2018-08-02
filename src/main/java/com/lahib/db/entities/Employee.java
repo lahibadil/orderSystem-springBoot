@@ -1,6 +1,7 @@
 package com.lahib.db.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
  */
 
 @Data
+@Accessors(chain = true)
 @Entity
 @Table(name = "employees")
 public class Employee {

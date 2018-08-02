@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -15,8 +16,8 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
-    public Payment findById(long id) {
-        return paymentRepository.findOne(id);
+    public Optional<Payment> findById(long id) {
+        return paymentRepository.findById(id);
     }
 
     public List<Payment> findAll() {
@@ -36,7 +37,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     public void delete(long id) {
-        paymentRepository.delete(id);
+        paymentRepository.deleteById(id);
     }
 
 }

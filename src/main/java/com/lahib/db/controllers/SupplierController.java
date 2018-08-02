@@ -40,7 +40,7 @@ public class SupplierController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Supplier> get(@PathVariable("id") long id) {
-        Supplier supplier = service.findById(id);
+        Supplier supplier = service.findById(id).get();
         if (supplier == null) {
             return new ResponseEntity<Supplier>(HttpStatus.NOT_FOUND);
         }

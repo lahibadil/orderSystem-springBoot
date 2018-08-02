@@ -25,14 +25,12 @@ public class CustomerController extends BaseController {
         this.service = service;
     }
 
-    @RequestMapping(
-            value = "/customers",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE
+    @GetMapping(
+            value = "/customers"
     )
     //@PreAuthorize("hasAnyRole('USER')")
-    public ResponseEntity<List<Customer>> getAll() {
-        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
+    public List<Customer> getAll() {
+        return service.findAll();
     }
 
     @RequestMapping(
@@ -41,7 +39,7 @@ public class CustomerController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Customer> get(@PathVariable("id") long id) {
-        Customer customer = service.findById(id);
+        Customer customer = service.findById(id).get();
         if (customer == null) {
             return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
         }

@@ -40,7 +40,7 @@ public class EmployeeController extends BaseController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Employee> get(@PathVariable("id") long id) {
-        Employee employee = service.findById(id);
+        Employee employee = service.findById(id).get();
         if (employee == null) {
             return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
         }

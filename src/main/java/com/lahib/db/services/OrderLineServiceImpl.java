@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -15,8 +16,8 @@ public class OrderLineServiceImpl implements OrderLineService {
     @Autowired
     private OrderLineRepository orderLineRepository;
 
-    public OrderLine findById(long id) {
-        return orderLineRepository.findOne(id);
+    public Optional<OrderLine> findById(long id) {
+        return orderLineRepository.findById(id);
     }
 
     public List<OrderLine> findAll() {
@@ -36,6 +37,6 @@ public class OrderLineServiceImpl implements OrderLineService {
     }
 
     public void delete(long id) {
-        orderLineRepository.delete(id);
+        orderLineRepository.deleteById(id);
     }
 }

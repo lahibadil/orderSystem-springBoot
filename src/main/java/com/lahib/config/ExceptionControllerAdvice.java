@@ -1,4 +1,4 @@
-package com.lahib.db.controllers;
+package com.lahib.config;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;

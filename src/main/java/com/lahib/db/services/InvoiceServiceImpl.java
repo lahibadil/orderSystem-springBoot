@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Adil on 4/12/2017.
@@ -16,8 +17,8 @@ public class InvoiceServiceImpl implements InvoiceService{
     @Autowired
     private InvoiceRepository invoiceRepository;
 
-    public Invoice findById(long id) {
-        return invoiceRepository.findOne(id);
+    public Optional<Invoice> findById(long id) {
+        return invoiceRepository.findById(id);
     }
 
     public List<Invoice> findAll() {
@@ -37,6 +38,6 @@ public class InvoiceServiceImpl implements InvoiceService{
     }
 
     public void delete(long id) {
-        invoiceRepository.delete(id);
+        invoiceRepository.deleteById(id);
     }
 }
